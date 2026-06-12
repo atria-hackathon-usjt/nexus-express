@@ -2,9 +2,10 @@
 
 :root {
   font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: #17201b;
-  background: #f7f8f3;
+    Bahnschrift, 'Arial Narrow', Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  color: #e9fffb;
+  background: #010605;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -17,7 +18,17 @@
 
 html {
   min-width: 320px;
-  background: #f7f8f3;
+  background: #010605;
+}
+
+html[data-theme='light'] {
+  color: #10221b;
+  background: #eef4ef;
+}
+
+html[data-theme='dark'] {
+  color: #e9fffb;
+  background: #010605;
 }
 
 body {
@@ -34,6 +45,330 @@ textarea {
 }
 
 button:focus-visible {
-  outline: 3px solid rgba(95, 135, 109, 0.42);
+  outline: 3px solid rgba(0, 229, 255, 0.42);
   outline-offset: 2px;
+}
+
+.app-shell {
+  min-height: 100vh;
+  color: var(--text-body);
+  background: var(--page-gradient);
+}
+
+.app-shell[data-theme='dark'] {
+  --page-gradient: linear-gradient(180deg, #020807, #031615 42%, #010605);
+  --surface: rgb(6 18 17 / 92%);
+  --surface-solid: #061211;
+  --surface-muted: #031615;
+  --surface-deep: #020807;
+  --surface-hover: #08201f;
+  --route-selected: #092323;
+  --border: #0c5d5f;
+  --border-strong: #00d4e6;
+  --text-primary: #f8fffd;
+  --text-body: #e9fffb;
+  --text-soft: #b8d5d1;
+  --text-muted: #8bb3ae;
+  --accent: #11e6f0;
+  --accent-strong: #00d4e6;
+  --accent-fill: #00a7b8;
+  --accent-fill-hover: #23f0ff;
+  --accent-on: #001312;
+  --panel-shadow: 0 18px 46px rgb(0 0 0 / 34%);
+  --map-shadow: 0 0 34px rgb(0 212 230 / 12%);
+  --hero-shadow: 0 0 50px rgb(0 212 230 / 12%);
+  --hero-overlay: linear-gradient(135deg, rgb(0 229 255 / 12%), transparent 42%, rgb(0 199 116 / 16%));
+  --success-surface: #17372d;
+  --success-text: #edf4ed;
+  --success-muted: #cfdcd2;
+  --error-surface: #2b0c11;
+  --error-text: #ffb4bf;
+  --route-trace-outline: #071514;
+  --map-label-stroke: #071514;
+  --marker-fill: #061211;
+  --marker-stroke: #ffffff;
+  --marker-text: #ffffff;
+  --pin-origin-fill: #ffffff;
+  --pin-destination-stroke: #ffffff;
+  --status-available-soft: #06241a;
+  --status-attention-soft: #2a2108;
+  --status-delayed-soft: #2b0c11;
+  --status-restricted-soft: #1f1031;
+}
+
+.app-shell[data-theme='light'] {
+  --page-gradient: linear-gradient(180deg, #f8fffc, #e8f3ef 44%, #f4faf6);
+  --surface: rgb(255 255 255 / 88%);
+  --surface-solid: #ffffff;
+  --surface-muted: #f2f8f5;
+  --surface-deep: #edf6f2;
+  --surface-hover: #e6f8f2;
+  --route-selected: #dff6ef;
+  --border: #b8d7ce;
+  --border-strong: #00a7b8;
+  --text-primary: #10221b;
+  --text-body: #172b22;
+  --text-soft: #3f5d55;
+  --text-muted: #5f746c;
+  --accent: #008a96;
+  --accent-strong: #00a7b8;
+  --accent-fill: #00b7c8;
+  --accent-fill-hover: #00d4e6;
+  --accent-on: #001312;
+  --panel-shadow: 0 18px 42px rgb(40 75 65 / 14%);
+  --map-shadow: 0 0 28px rgb(0 120 140 / 10%);
+  --hero-shadow: 0 18px 46px rgb(30 75 70 / 16%);
+  --hero-overlay: linear-gradient(135deg, rgb(0 160 176 / 10%), transparent 42%, rgb(0 170 92 / 12%));
+  --success-surface: #d8f4e6;
+  --success-text: #10281e;
+  --success-muted: #315247;
+  --error-surface: #ffe9e8;
+  --error-text: #9a2b2b;
+  --route-trace-outline: #ffffff;
+  --map-label-stroke: #ffffff;
+  --marker-fill: #10221b;
+  --marker-stroke: #ffffff;
+  --marker-text: #ffffff;
+  --pin-origin-fill: #ffffff;
+  --pin-destination-stroke: #ffffff;
+  --status-available-soft: #dcf8ea;
+  --status-attention-soft: #fff3c9;
+  --status-delayed-soft: #ffe0e4;
+  --status-restricted-soft: #ecddff;
+}
+
+.theme-panel {
+  color: var(--text-body);
+  background: var(--surface);
+  border-color: var(--border);
+  box-shadow: var(--panel-shadow);
+}
+
+.theme-card {
+  color: var(--text-body);
+  background: var(--surface-muted);
+  border-color: var(--border);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 3%);
+}
+
+.theme-map-frame,
+.theme-hero-frame {
+  background: var(--surface-deep);
+  border-color: var(--border);
+  box-shadow: var(--map-shadow);
+}
+
+.theme-hero-frame {
+  box-shadow: var(--hero-shadow);
+}
+
+.theme-logo-box {
+  background: color-mix(in srgb, var(--surface-deep) 84%, transparent);
+  border-color: color-mix(in srgb, var(--accent-strong) 70%, transparent);
+  box-shadow: 0 0 28px rgb(0 229 255 / 22%);
+}
+
+.theme-hero-overlay {
+  background: var(--hero-overlay);
+}
+
+.theme-eyebrow {
+  color: var(--accent);
+}
+
+.theme-title {
+  color: var(--text-primary);
+}
+
+.theme-copy {
+  color: var(--text-soft);
+}
+
+.theme-muted {
+  color: var(--text-muted);
+}
+
+.theme-soft {
+  color: var(--text-soft);
+}
+
+.theme-accent {
+  color: var(--accent);
+}
+
+.theme-pill {
+  color: var(--accent);
+  background: var(--surface-muted);
+  border-color: color-mix(in srgb, var(--accent-strong) 60%, transparent);
+}
+
+.theme-field {
+  color: var(--text-body);
+  background: var(--surface-deep);
+  border-color: var(--border);
+}
+
+.theme-field:focus {
+  border-color: var(--border-strong);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-strong) 20%, transparent);
+}
+
+.theme-primary-button {
+  color: var(--accent-on);
+  background: var(--accent-fill);
+  border-color: var(--border-strong);
+}
+
+.theme-primary-button:hover {
+  background: var(--accent-fill-hover);
+}
+
+.theme-route-card {
+  color: var(--text-body);
+  background: var(--surface-muted);
+  border-color: var(--border);
+}
+
+.theme-route-card:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-strong);
+}
+
+.theme-route-card-selected {
+  color: var(--text-body);
+  background: var(--route-selected);
+  border-color: var(--border-strong);
+  box-shadow: inset 5px 0 0 #19e68c;
+}
+
+.theme-filter-button {
+  color: var(--text-soft);
+  background: var(--surface-muted);
+  border-color: var(--border);
+}
+
+.theme-filter-button:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-strong);
+}
+
+.theme-filter-button-active {
+  color: var(--accent-on);
+  background: var(--accent-fill);
+  border-color: var(--border-strong);
+  box-shadow: 0 0 20px rgb(0 212 230 / 22%);
+}
+
+.theme-success-callout {
+  color: var(--success-text);
+  background: var(--success-surface);
+}
+
+.theme-success-callout p {
+  color: var(--success-muted);
+}
+
+.theme-error {
+  color: var(--error-text);
+  background: var(--error-surface);
+  border-color: #ff5c72;
+}
+
+.theme-scroll {
+  scrollbar-color: var(--accent-strong) transparent;
+  scrollbar-width: thin;
+}
+
+.theme-toggle {
+  background: var(--surface-muted);
+  border-color: var(--border);
+}
+
+.theme-toggle-option {
+  color: var(--text-soft);
+}
+
+.theme-toggle-option-active {
+  color: var(--accent-on);
+  background: var(--accent-fill);
+}
+
+.status-badge {
+  border-style: solid;
+}
+
+.status-available {
+  color: #007a49;
+  background: #dff8ea;
+  border-color: #19e68c;
+}
+
+.status-attention {
+  color: #806014;
+  background: #fff4cf;
+  border-color: #f5c84c;
+}
+
+.status-delayed {
+  color: #a11f35;
+  background: #ffe2e6;
+  border-color: #ff5c72;
+}
+
+.status-restricted {
+  color: #6d33b5;
+  background: #ecddff;
+  border-color: #b273ff;
+}
+
+.app-shell[data-theme='dark'] .status-available,
+.app-shell[data-theme='dark'] .risk-low {
+  color: #7dffba;
+  background: #06241a;
+}
+
+.app-shell[data-theme='dark'] .status-attention,
+.app-shell[data-theme='dark'] .risk-medium {
+  color: #ffe08a;
+  background: #2a2108;
+}
+
+.app-shell[data-theme='dark'] .status-delayed,
+.app-shell[data-theme='dark'] .risk-critical {
+  color: #ffb4bf;
+  background: #2b0c11;
+}
+
+.app-shell[data-theme='dark'] .status-restricted {
+  color: #d6bdff;
+  background: #1f1031;
+}
+
+.risk-low {
+  color: #007a49;
+  background: #dff8ea;
+  border-color: #19e68c;
+}
+
+.risk-medium {
+  color: #806014;
+  background: #fff4cf;
+  border-color: #f5c84c;
+}
+
+.risk-high {
+  color: #a34c20;
+  background: #ffe7d8;
+  border-color: #ff8f5c;
+}
+
+.risk-critical {
+  color: #a11f35;
+  background: #ffe2e6;
+  border-color: #ff5c72;
+}
+
+.app-shell[data-theme='dark'] .risk-high {
+  color: #ffc0a3;
+  background: #2b170c;
 }
