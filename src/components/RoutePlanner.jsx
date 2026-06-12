@@ -41,7 +41,7 @@ export function RoutePlanner({
           <Stat label="Prazo" value={`${selectedRoute.deadlineHours} h`} />
         </div>
         <div className="mt-[18px] rounded-lg bg-[#17372d] p-[18px] text-left text-[#edf4ed]">
-          <span className="mb-2.5 inline-flex rounded-full bg-[#f0b84d] px-2 py-1 text-[0.72rem] font-extrabold text-[#17201b] uppercase">
+          <span className="mb-2.5 inline-flex rounded-full bg-[#4df06b] px-2 py-1 text-[0.72rem] font-extrabold text-[#17201b] uppercase">
             Recomendado
           </span>
           <strong className="block">{bestVehicle.model}</strong>

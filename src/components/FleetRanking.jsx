@@ -20,7 +20,11 @@ export function FleetRanking({ vehicles }) {
           </h2>
         </div>
 
-        <div className="mt-[18px] grid gap-2" role="table" aria-label="Ranking de veículos">
+        <div
+          className="mt-[18px] grid max-h-[560px] gap-2 overflow-y-auto pr-1 overscroll-contain [scrollbar-color:#8aa090_transparent] [scrollbar-width:thin] lg:max-h-[620px]"
+          role="table"
+          aria-label="Ranking de veículos"
+        >
           <div
             className="hidden min-h-10 grid-cols-[1.35fr_0.55fr_1.4fr_0.65fr_0.95fr] gap-3.5 px-3.5 py-3 text-xs font-extrabold text-[#65756c] uppercase lg:grid"
             role="row"

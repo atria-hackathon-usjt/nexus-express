@@ -5,7 +5,7 @@ export function Hero() {
     <section className="mx-auto grid max-w-305 grid-cols-1 items-stretch gap-10 px-6 pt-11 pb-7 lg:grid-cols-[minmax(0,1fr)_minmax(360px,0.74fr)]">
       <div className="flex min-h-80 flex-col justify-center lg:min-h-97.5">
         <p className="mb-2.5 text-xs font-extrabold tracking-[0.08em] text-[#52725e] uppercase">
-          Nexus Predict Hackathon
+          Nexus Predict - Hackathon
         </p>
         <h1 className="max-w-212.5 text-[clamp(2.4rem,5vw,5.8rem)] leading-[0.94] font-semibold tracking-normal text-[#102017]">
           Manutenção preventiva automatizada para decisões logísticas mais limpas.
